@@ -16,24 +16,24 @@ int main()
 
 	switch (choice)
 	{
-		case '1':
-			cout << "taking the easy way out arnt you" << endl;
-			break;
-		case '2':
-			cout << "you can do better" << endl;
-			break;
-		case '3':
-			cout << "just average" << endl;
-			break;
-		case '4':
-			cout << "You are a bit masochistic" << endl;
-			break;
-		case '5':
-			cout << "Please get some help" << endl;
-			break;
-		default:
-			cout << "thatst not a valid input" << endl;
-			break;
+	case '1':
+		cout << "taking the easy way out arnt you" << endl;
+		break;
+	case '2':
+		cout << "you can do better" << endl;
+		break;
+	case '3':
+		cout << "just average" << endl;
+		break;
+	case '4':
+		cout << "You are a bit masochistic" << endl;
+		break;
+	case '5':
+		cout << "Please get some help" << endl;
+		break;
+	default:
+		cout << "thatst not a valid input" << endl;
+		break;
 
 	}
 
