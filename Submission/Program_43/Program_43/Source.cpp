@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <array>
+
 using namespace std;
 
 void enterScore();
@@ -41,12 +42,13 @@ void enterScore()
 		string name;
 		int score;
 	};
+
 	bool idk = true;
 	int i = 0;
 	struct generalScore list[10];
 	fstream inoutfile;
 	string line;
-	inoutfile.open("scores.txt");
+	inoutfile.open("scores.txt", ios::app);
 	while (getline(inoutfile, line))
 	{
 		if (idk)
@@ -94,7 +96,8 @@ void enterScore()
 		f++;
 	}
 	inoutfile.close();
-	ofstream fileReset("scores.txt");
+	ofstream fileReset;
+	fileReset.open("scores.txt");
 	int e = 0;
 	for (int d = 0; d < f; d++)
 	{
@@ -122,6 +125,8 @@ void displayScore()
 	
 	getline(infile, line);
 	getline(infile, line);
+
+
 	if (stoi(line) == -858993460)
 	{
 		cout << "There are currently no scores";
