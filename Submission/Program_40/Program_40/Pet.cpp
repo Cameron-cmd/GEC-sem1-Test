@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Pet::Pet(int hunger, int boredom)
+Pet::Pet(int hunger = 0, int boredom = 0)
 {
 	cout << "A new pet has arrived" << endl;
 	m_hunger = hunger;
@@ -25,7 +25,7 @@ void Pet::Play(int fun = 4)
 		m_bored = 0;
 	PassingTime();
 }
-void Pet::Talk() const
+void Pet::Talk()
 {
 	cout << "I am your pet and I feel ";
 	int mood = GetMood();
@@ -38,6 +38,10 @@ void Pet::Talk() const
 	else
 		cout << "happy";
 	PassingTime();
+}
+int const Pet::GetMood()
+{
+	return (m_hunger + m_bored);
 }
 void Pet::PassingTime(int time = 1)
 {

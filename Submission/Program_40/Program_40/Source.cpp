@@ -9,7 +9,6 @@ using namespace std;
 
 int main()
 {
-	Mammal* mammalPtr;
 	int choice;
 
 	cout << "1.Dog 2.Cat 3.Hamster" << endl << "Enter choice : ";
@@ -21,24 +20,40 @@ int main()
 	switch (choice)
 	{
 	case 1:
-		Pet* catPtr;
-		catPtr = Cat();
+		Cat* catPtr = new Cat(0,0);
 		break;
 
 	case 2:
-		mammalPtr = new Cat();
+		Dog* dogPtr = new Dog(0,0);
 		break;
 
 	case 3:
-		mammalPtr = new Horse();
+		Hamster* hamsterPtr = new Hamster(0,0);
 		break;
 
 	default:
-		mammalPtr = new Mammal();
+		Pet petPtr;
+		petPtr = Pet();
 		break;
-	}
 
-	mammalPtr->Speak();
+	int decision = 0;
+	while (decision == 0)
+	{
+		cout << "Input 0 to Quit\n1 to listen to your pet\n2 to feed your pet\n3 to play with your pet" << endl;
+		cin >> decision;
+
+		//switch (decision)
+		//{
+		//	case 0:
+		//		break;
+		//
+		//	case 1:
+		//		l
+		//}
+		catPtr->Talk();
+		catPtr->Feed();
+	}
+	};
 
 	cin.get();
 	return 0;

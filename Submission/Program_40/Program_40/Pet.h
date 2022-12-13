@@ -7,10 +7,10 @@ using namespace std;
 class Pet
 {
 public:
-	Pet(int hunger, int boredom);
+	Pet(int hunger = 0, int boredom = 0);
 	~Pet();
 
-	virtual void Talk() const { cout << "Speak" << endl; }
+	void Talk();
 
 	void Feed(int food = 4);
 	void Play(int fun = 4);
@@ -20,10 +20,7 @@ private:
 	int m_bored = 0;
 
 protected:
-	int const GetMood()
-	{
-		return m_hunger + m_bored;
-	};
+	int const GetMood();
 	void PassingTime(int time = 1);
 };
 

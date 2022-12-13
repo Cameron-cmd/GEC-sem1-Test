@@ -6,6 +6,8 @@
 class Cat : Pet
 {
 public:
+	Cat(int hunger, int boredom) : Pet(hunger, boredom) {};
+	~Cat();
 	virtual void Talk() const { cout << "Meow!" << endl; }
 };
 
