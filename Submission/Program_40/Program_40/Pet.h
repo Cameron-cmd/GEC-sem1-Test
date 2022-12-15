@@ -7,10 +7,10 @@ using namespace std;
 class Pet
 {
 public:
-	Pet(int hunger = 0, int boredom = 0);
+	Pet(int hunger, int boredom);
 	~Pet();
 
-	void Talk();
+	virtual void Talk();
 
 	void Feed(int food = 4);
 	void Play(int fun = 4);

@@ -20,6 +20,12 @@ int main()
 	
 	cout << "\nSecond name: ";
 	getline(cin, name2);
+	while (name2.length() <= name1.length()) 
+	{
+		cout << "\nMust be longer then the first name\nSecond name: ";
+		getline(cin, name2);
+	}
+
 	testString.replace(26, name1.length(), name2);
 	cout << testString << endl;
 

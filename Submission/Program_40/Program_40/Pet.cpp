@@ -9,41 +9,45 @@ Pet::Pet(int hunger = 0, int boredom = 0)
 	m_hunger = hunger;
 	m_bored = boredom;
 }
-void Pet::Feed(int food = 4)
+Pet::~Pet()
+{
+}
+void Pet::Feed(int food)
 {
 	cout << "Burp!" << endl;
 	m_hunger -= food;
 	if (m_hunger < 0)
 		m_hunger = 0;
-	PassingTime();
+	PassingTime(1);
 }
-void Pet::Play(int fun = 4)
+void Pet::Play(int fun)
 {
 	cout << "Fun!" << endl;
 	m_bored -= fun;
 	if (m_bored < 0)
 		m_bored = 0;
-	PassingTime();
+	PassingTime(1);
 }
 void Pet::Talk()
 {
 	cout << "I am your pet and I feel ";
 	int mood = GetMood();
 	if (mood > 15)
-		cout << "mad";
+		cout << "mad\n";
 	else if (mood > 10)
-		cout << "frustrated";
+		cout << "frustrated\n";
 	else if (mood > 5)
 		cout << "okay";
 	else
-		cout << "happy";
-	PassingTime();
+		cout << "happy\n";
+	cerr << "why is this happening" << endl;
+	PassingTime(1);
 }
 int const Pet::GetMood()
 {
 	return (m_hunger + m_bored);
 }
-void Pet::PassingTime(int time = 1)
+void Pet::PassingTime(int time)
 {
 	m_hunger += time;
 	m_bored += time;

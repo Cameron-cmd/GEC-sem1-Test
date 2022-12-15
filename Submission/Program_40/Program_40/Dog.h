@@ -3,12 +3,12 @@
 
 #include "Pet.h"
 
-class Dog : Pet
+class Dog : public Pet
 {
 public:
 	Dog(int hunger, int boredom) : Pet(hunger, boredom) {};
 	~Dog();
-	virtual void Talk() const { cout << "Woof!" << endl; }
+	void Talk() override;
 };
 
 #endif
