@@ -10,6 +10,11 @@ int main()
 	{
 		cout << "Please input a number between 1 and 10" << endl;
 		cin >> range;
+		while (range > 10 || range < 1)
+		{
+			cout << "Please input a number between 1 and 10" << endl;
+			cin >> range;
+		}
 		cout << endl;
 
 		for (int i = 0; i < range; i++)
